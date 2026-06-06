@@ -1,1 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
+body {
+  overflow-x: hidden;
+  background: #000;
+  color: white;
+}
+
+/* 🎬 INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #2a2a2a, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.intro-content {
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+/* 🌿 JARDIM */
+#garden {
+  opacity: 0;
+  transition: 1.2s ease;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🎨 CORES AQUARELA */
+.red {
+  background: linear-gradient(135deg, #7a1f1f, #2a0c0c);
+}
+
+.blue {
+  background: linear-gradient(135deg, #1e3a6b, #0b1220);
+}
+
+.yellow {
+  background: linear-gradient(135deg, #6b5e1e, #2a240c);
+}
+
+.green {
+  background: linear-gradient(135deg, #1e6b3a, #0c2a16);
+}
+
+.purple {
+  background: linear-gradient(135deg, #3b1e6b, #140b2a);
+}
+
+.pink {
+  background: linear-gradient(135deg, #6b1e4f, #2a0c1f);
+}
+
+.final {
+  background: radial-gradient(circle, #111, #000);
+}
+
+/* 🌬️ PÉTALAS */
+#petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
